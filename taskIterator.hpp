@@ -1,23 +1,29 @@
 #pragma once
 #include <iostream>
 #include <iterator>
-#include
 
 namespace itertools
 {
-template <class T>
-class TaskIterator : public std::iterator<std::input_iterator_tag, T>
+template <class Container>
+class sIterator : public std::iterator<
+                        std::input_iterator_tag,   // iterator_category
+                        Container,                      // value_type
+                        Container,                      // difference_type
+                        const Container*,               // pointer
+                        Container                       // reference
+                                      >
 {
 public:
-  T b, e;
+  Container start, finish;
 
-  TaskIterator();
-  TaskIterator &operator++();
-  TaskIterator operator++(int);
-  bool operator==(const TaskIterator &rhs) const;
-  bool operator!=(const TaskIterator &rhs) const;
-  int &operator*() { return *this; }
-  T &begin() { return b; }
-  T &end() { return e; }
+  sIterator();
+  sIterator<Container> &operator++();
+  sIterator<Container> operator++(int);
+  sIterator<Container> operator=(sIterator<Container>);
+  bool operator==(const Container &other) const;
+  bool operator!=(const Container &other) const;
+  Container& operator*() const;
+  Container* begin();
+  Container* end();
 };
 } // namespace itertools

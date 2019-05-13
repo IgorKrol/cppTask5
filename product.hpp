@@ -5,5 +5,5 @@
 namespace itertools
 {
     template<class T,class P>
-    TaskIterator<T> product(TaskIterator<T> a, TaskIterator<P> b);
+    sIterator<T> product(sIterator<T> a, sIterator<P> b);
 }

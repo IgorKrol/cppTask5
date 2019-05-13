@@ -3,6 +3,6 @@
 
 namespace itertools
 {
-template<class T>
-TaskIterator<T> chain(TaskIterator<T> a, TaskIterator<T> b);
+template<class Container1, class Container2>
+sIterator<Container2> chain(Container1 a, Container2 b);
 }

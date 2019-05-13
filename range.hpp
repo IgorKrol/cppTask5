@@ -3,6 +3,6 @@
 
 namespace itertools
 {
-template<class T>
-TaskIterator<T> range(T a, T b);
+template<class Container>
+sIterator<Container> range(Container a, Container b);
 }
