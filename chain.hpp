@@ -1,5 +1,8 @@
 #pragma once
-#include "stk.hpp"
+#include "taskIterator.hpp"
 
+namespace itertools
+{
 template<class T>
-Stk<T> chain(Stk<T> a, Stk<T> b);
+TaskIterator<T> chain(TaskIterator<T> a, TaskIterator<T> b);
+}

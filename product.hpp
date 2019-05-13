@@ -1,6 +1,9 @@
 #pragma once
 #include <string.h>
-#include "stk.hpp"
+#include "taskIterator.hpp"
 
-template<class T,class P>
-Stk<string> product(Stk<T> a, Stk<P> b);
+namespace itertools
+{
+    template<class T,class P>
+    TaskIterator<T> product(TaskIterator<T> a, TaskIterator<P> b);
+}

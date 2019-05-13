@@ -1,5 +1,8 @@
 #pragma once
-#include "stk.hpp"
+#include "taskIterator.hpp"
 
+namespace itertools
+{
 template<class T>
-Stk<T> range(T a, T b);
+TaskIterator<T> range(T a, T b);
+}
