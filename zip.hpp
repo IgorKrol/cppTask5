@@ -1,9 +1,9 @@
 #pragma once
 #include <string.h>
-#include "stk.hpp"
+#include "taskIterator.hpp"
 
 namespace itertools
 {
 template<class T,class P>
-Stk<string> zip(Stk<T> a, Stk<P> b);
+sIterator<T> zip(sIterator<T> a, sIterator<P> b);
 }

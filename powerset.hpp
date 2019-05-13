@@ -5,5 +5,5 @@
 namespace itertools
 {
 template<class T,class P>
-TaskIterator<T> powerset(TaskIterator<T> a, TaskIterator<P> b);
+sIterator<T> powerset(sIterator<T> a, sIterator<P> b);
 }
