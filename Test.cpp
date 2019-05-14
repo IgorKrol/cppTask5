@@ -247,14 +247,14 @@ int main(){
 		;
 
 		// Checking for Exceptions
-		testcase.setname("Exceptions")
+		testcase.setname("Exceptions");
 
-		testcase.CHECK_THROWS(range(2,1))				// a supposed to be bigger than b
-		testcase.CHECK_THROWS(range(2,2))				// a supposed to be bigger than b
-		testcase.CHECK_THROWS(range(1.1, 0))
-		testcase.CHECK_THROWS(range('b', 'a'))
-		testcase.CHECK_THROWS(range('a', 0))
-		testcase.CHECK_THROWS(zip(range(1,3), range(2,10))		// different lengths
+		testcase.CHECK_THROWS(range(2,1));				// a supposed to be bigger than b
+		testcase.CHECK_THROWS(range(2,2));				// a supposed to be bigger than b
+		testcase.CHECK_THROWS(range(1.1, 0));
+		testcase.CHECK_THROWS(range('b', 'a'));
+		testcase.CHECK_THROWS(range('a', 0));
+		testcase.CHECK_THROWS(zip(range(1,3), range(2,10));		// different lengths
 		;
 
 	 grade = testcase.grade();
