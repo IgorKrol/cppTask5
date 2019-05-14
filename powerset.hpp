@@ -4,6 +4,6 @@
 
 namespace itertools
 {
-template<class T,class P>
-sIterator<T> powerset(sIterator<T> a, sIterator<P> b);
+template <class T>
+DummyIterable powerset(T){return DummyIterable{};}
 }

@@ -4,6 +4,6 @@
 
 namespace itertools
 {
-    template<class T,class P>
-    sIterator<T> product(sIterator<T> a, sIterator<P> b);
+template <class T, class P>
+DummyIterable product(T, P){return DummyIterable{};}
 }

@@ -4,6 +4,6 @@
 
 namespace itertools
 {
-template<class T,class P>
-sIterator<T> zip(sIterator<T> a, sIterator<P> b);
+template <class T, class P>
+DummyIterable zip(T, P){return DummyIterable{};}
 }

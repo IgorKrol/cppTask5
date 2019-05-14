@@ -4,26 +4,10 @@
 
 namespace itertools
 {
-template <class Container>
-class sIterator : public std::iterator<
-                        std::input_iterator_tag,   // iterator_category
-                        Container,                      // value_type
-                        Container,                      // difference_type
-                        const Container*,               // pointer
-                        Container                       // reference
-                                      >
+class DummyIterable
 {
-public:
-  Container start, finish;
-
-  sIterator();
-  sIterator<Container> &operator++();
-  sIterator<Container> operator++(int);
-  sIterator<Container> operator=(sIterator<Container>);
-  bool operator==(const Container &other) const;
-  bool operator!=(const Container &other) const;
-  Container& operator*() const;
-  Container* begin();
-  Container* end();
+  public:
+  int *begin() const { return nullptr; }
+  int *end() const { return nullptr; }
 };
 } // namespace itertools
