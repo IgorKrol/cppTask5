@@ -9,7 +9,6 @@ using namespace std;
 #include "zip.hpp"
 #include "powerset.hpp"
 
-#define COMMA ,
 
 using namespace itertools;
 
@@ -127,19 +126,19 @@ int main(){
 		for (auto subset: powerset(range(1,4))){
 			strTest += subset;
 		}
-		testcase.CHECK_OUTPUT(strTest, "{}{1}{2}{3}{1,2}{1,3}{2,3}{1,2,3}");
+		testcase.CHECK_OUTPUT(strTest, "{}{1}{2}{1,2}{3}{1,3}{2,3}{1,2,3}");
 		strTest = "";
 
 		for (auto subset: powerset(range('a','d'))){
 			strTest += subset;
 		}
-		testcase.CHECK_OUTPUT(strTest, "{}{a}{b}{c}{a,b}{a,c}{b,c}{a,b,c}");
+		testcase.CHECK_OUTPUT(strTest, "{}{a}{b}{a,b}{c}{a,c}{b,c}{a,b,c}");
 		strTest = "";
 
-		for (auto subset: powerset(zip(range('a','c'), range('c', 'e')))){		// zip: ab, cd
+		for (auto subset: powerset(zip(range('a','c'), range('c', 'e')))){		// zip: a,c, b,d
 			strTest += subset;
 		}
-		testcase.CHECK_OUTPUT(strTest, "{}{ab}{cd}{ab,cd}");
+		testcase.CHECK_OUTPUT(strTest, "{}{a,c}{b,d}{a,c,b,d}");
 		strTest = "";
 
 
