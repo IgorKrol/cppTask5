@@ -145,7 +145,13 @@ int main(){
 
 
 		// Checking for Exceptions
-		testcase.setname("Exceptions");
+		testcase.setname("Exceptions")
+
+		testcase.CHECK_THROWS(range(2,1))				// a supposed to be bigger than b
+		testcase.CHECK_THROWS(range(2,2))				// a supposed to be bigger than b
+
+		testcase.CHECK_THROWS(zip(range(1,3), range(2,10))		// different lengths
+		;
 
 
 
