@@ -1,8 +1,13 @@
 #pragma once
 #include "taskIterator.hpp"
+#include "range.hpp"
+#include "chain.hpp"
+#include "product.hpp"
+#include "zip.hpp"
+#include "powerset.hpp"
 
 namespace itertools
 {
-template<class Container1, class Container2>
-sIterator<Container2> chain(Container1 a, Container2 b);
+template <class T, class P>
+DummyIterable chain(T, P){return DummyIterable{};}
 }

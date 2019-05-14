@@ -1,9 +1,14 @@
 #pragma once
 #include <string.h>
 #include "taskIterator.hpp"
+#include "range.hpp"
+#include "chain.hpp"
+#include "product.hpp"
+#include "zip.hpp"
+#include "powerset.hpp"
 
 namespace itertools
 {
-template<class T,class P>
-sIterator<T> zip(sIterator<T> a, sIterator<P> b);
+template <class T, class P>
+DummyIterable zip(T, P){return DummyIterable{};}
 }
