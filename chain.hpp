@@ -9,5 +9,5 @@
 namespace itertools
 {
 template <class T, class P>
-DummyIterable chain(T, P){return DummyIterable{};}
+	DummyIterable chain(T, P){return DummyIterable{};}
 }
