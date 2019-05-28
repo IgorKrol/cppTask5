@@ -43,10 +43,10 @@ template <typename T>
 	// CONSTRUCTOR
 	range(T s, T e) : _start(s), _end(e) {}
 
-	iterator begin() const {
+	iterator begin() const {			// returns the start of range
         return iterator(_start);
 	}
-	iterator end() const {
+	iterator end() const {				// returns the end of range
         return iterator(_end);
 	}
 };

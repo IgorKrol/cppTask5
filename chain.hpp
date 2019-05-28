@@ -22,14 +22,6 @@ template <typename T1, typename T2>
 	// CONSTRUCTOR
 	chain(T1 _start, T2 _end) :  itr1(_start), itr2(_end) {}
 
-	auto begin() const{
-        return iterator<decltype(itr1.begin()),decltype(itr2.begin())>(itr1.begin(), itr2.begin());
-	}
-
-	auto end() const{
-        return iterator<decltype(itr1.end()),decltype(itr2.end())>(itr1.end(), itr2.end());
-	}
-
 	template <typename C1, typename C2>
 	class iterator {
 
@@ -43,7 +35,8 @@ template <typename T1, typename T2>
 	iterator(C1 _it1, C2 _it2) : it1(_it1), it2(_it2) {}
 
 	// OPERATORS
-	iterator<C1,C2>& operator++() {
+
+	iterator<C1,C2>& operator++() {	// if first container reached his end, advances the second container
         if(flag) ++it1;
         else ++it2;
 
@@ -51,7 +44,7 @@ template <typename T1, typename T2>
 	}
 
 	bool operator!=(iterator<C1,C2>  it){
-        if(flag && !(it1 != it.it1))
+        if(flag && !(it1 != it.it1))			
                 flag = false;
         if(flag)
                 return it1 != it.it1;
@@ -65,8 +58,13 @@ template <typename T1, typename T2>
         else return *it2;
 	}
 
-
 };
+	auto begin() const{
+        return iterator<decltype(itr1.begin()),decltype(itr2.begin())>(itr1.begin(), itr2.begin());
+	}
 
+	auto end() const{
+        return iterator<decltype(itr1.end()),decltype(itr2.end())>(itr1.end(), itr2.end());
+	}
 };
 }
