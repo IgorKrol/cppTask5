@@ -154,44 +154,44 @@ int main(){
 		strTest = "";
 		;
 		
-		// Checking Products
-		testcase.setname("Product Tests");
-		for(auto pair: product(range(1,4), string("hello"))){
-			strTest += pair;
-		}
-		testcase.CHECK_OUTPUT(strTest, "1,h1,e1,l1,l1,o2,h2,e2,l2,l2,o3,h3,e3,l3,l3,o");
-		strTest = "";
+		// // Checking Products
+		// testcase.setname("Product Tests");
+		// for(auto pair: product(range(1,4), string("hello"))){
+		// 	strTest += pair;
+		// }
+		// testcase.CHECK_OUTPUT(strTest, "1,h1,e1,l1,l1,o2,h2,e2,l2,l2,o3,h3,e3,l3,l3,o");
+		// strTest = "";
 
-		for(auto pair: product(range('a', 'd'), range(1,4))){
-			strTest += pair;
-		}
-		testcase.CHECK_OUTPUT(strTest, "a,1a,2a,3b,1b,2b,3c,1c,2c,3");
-		strTest = "";
+		// for(auto pair: product(range('a', 'd'), range(1,4))){
+		// 	strTest += pair;
+		// }
+		// testcase.CHECK_OUTPUT(strTest, "a,1a,2a,3b,1b,2b,3c,1c,2c,3");
+		// strTest = "";
 
-		for(auto pair: product(range('a', 'd'), range(1.1,4.1))){
-			strTest += pair;
-		}
-		testcase.CHECK_OUTPUT(strTest, "a,1.1a,2.1a,3.1b,1.1b,2.1b,3.1c,1.1c,2.1c,3.1");
-		strTest = "";
+		// for(auto pair: product(range('a', 'd'), range(1.1,4.1))){
+		// 	strTest += pair;
+		// }
+		// testcase.CHECK_OUTPUT(strTest, "a,1.1a,2.1a,3.1b,1.1b,2.1b,3.1c,1.1c,2.1c,3.1");
+		// strTest = "";
 
-		for(auto pair: product(range(1, 4), range(1.1,4.1))){
-			strTest += pair;
-		}
-		testcase.CHECK_OUTPUT(strTest, "1,1.11,2.11,3.12,1.12,2.12,3.13,1.13,2.13,3.1");
-		strTest = "";
+		// for(auto pair: product(range(1, 4), range(1.1,4.1))){
+		// 	strTest += pair;
+		// }
+		// testcase.CHECK_OUTPUT(strTest, "1,1.11,2.11,3.12,1.12,2.12,3.13,1.13,2.13,3.1");
+		// strTest = "";
 
-		for(auto pair: product(chain(string("ab"), range('c', 'e')), chain(string("12"), range('3', '5')))){
-			strTest += pair;
-		}
-		testcase.CHECK_OUTPUT(strTest, "a,1a,2a,3a,4b,1b,2b,3b,4c,1c,2c,3c,4d,1d,2d,3d,4");
-		strTest = "";
+		// for(auto pair: product(chain(string("ab"), range('c', 'e')), chain(string("12"), range('3', '5')))){
+		// 	strTest += pair;
+		// }
+		// testcase.CHECK_OUTPUT(strTest, "a,1a,2a,3a,4b,1b,2b,3b,4c,1c,2c,3c,4d,1d,2d,3d,4");
+		// strTest = "";
 
-		for(auto pair: product(zip(string("ab"), range('c', 'e')), zip(string("12"), range('3', '5')))){
-			strTest += pair;				// zip1: a,c b,d;; zip2:1,3 2,4;;
-		}									// product of zips: a,c1,3 a,c2,4 b,d1,3 b,d2,4
-		testcase.CHECK_OUTPUT(strTest, "a,c1,3a,c2,4b,d1,3b,d2,4");
-		strTest = "";
-		;
+		// for(auto pair: product(zip(string("ab"), range('c', 'e')), zip(string("12"), range('3', '5')))){
+		// 	strTest += pair;				// zip1: a,c b,d;; zip2:1,3 2,4;;
+		// }									// product of zips: a,c1,3 a,c2,4 b,d1,3 b,d2,4
+		// testcase.CHECK_OUTPUT(strTest, "a,c1,3a,c2,4b,d1,3b,d2,4");
+		// strTest = "";
+		// ;
 
 		// Checking Powersets
 		testcase.setname("Powerset Tests");
