@@ -127,58 +127,66 @@ int main(){
 		// Checking Zips
 		testcase.setname("Zip Tests");
 		for (auto pair: zip(range(1,6), string("hello"))){
-			strTest += pair;		// works? maybe to_string(pair)?
+			strTest += to_string(pair.first);		// works? maybe to_string(pair)?
+			strTest += pair.second;
 		}
 		testcase.CHECK_OUTPUT(strTest, "1,h2,e3,l4,l5,o");
 		strTest = "";
 		;
 		
 		for (auto pair: zip(range(1,6), range('a', 'f'))){
-			strTest += pair;		// works? maybe to_string(pair)?
+			strTest += to_string(pair.first);		// works? maybe to_string(pair)?
+			strTest += pair.second;
 		}
 		testcase.CHECK_OUTPUT(strTest, "1,a2,b3,c4,d5,e");
 		strTest = "";
 		;
 
 		for (auto pair: zip(range(1,6), range(7,12))){
-			strTest += pair;		// works? maybe to_string(pair)?
+			strTest += to_string(pair.first);		// works? maybe to_string(pair)?
+			strTest += to_string(pair.second);
 		}
 		testcase.CHECK_OUTPUT(strTest, "1,72,83,94,105,11");
 		strTest = "";
 		;
 
-		for (auto pair: zip(zip(range(1,4), string("xyz")),zip(string("abc"),range(6,9)))){
-			strTest += pair;		// works? maybe to_string(pair)?	
-		}
-		testcase.CHECK_OUTPUT(strTest, "1,x,a,62,y,b,73,z,c,8");
+		// for (auto pair: zip(zip(range(1,4), string("xyz")),zip(string("abc"),range(6,9)))){
+		// 	strTest += to_string(pair.first);		// works? maybe to_string(pair)?
+		// 	strTest += to_string(pair.second);
+		// }
+		// testcase.CHECK_OUTPUT(strTest, "1,x,a,62,y,b,73,z,c,8");
 		strTest = "";
 		;
 		
-		// // Checking Products
-		// testcase.setname("Product Tests");
-		// for(auto pair: product(range(1,4), string("hello"))){
-		// 	strTest += pair;
-		// }
-		// testcase.CHECK_OUTPUT(strTest, "1,h1,e1,l1,l1,o2,h2,e2,l2,l2,o3,h3,e3,l3,l3,o");
-		// strTest = "";
+		// Checking Products
+		testcase.setname("Product Tests");
+		for(auto pair: product(range(1,4), string("hello"))){
+			strTest += to_string(pair.first);		// works? maybe to_string(pair)?
+			strTest += pair.second;
+		}
+		testcase.CHECK_OUTPUT(strTest, "1,h1,e1,l1,l1,o2,h2,e2,l2,l2,o3,h3,e3,l3,l3,o");
+		strTest = "";
 
-		// for(auto pair: product(range('a', 'd'), range(1,4))){
-		// 	strTest += pair;
-		// }
-		// testcase.CHECK_OUTPUT(strTest, "a,1a,2a,3b,1b,2b,3c,1c,2c,3");
-		// strTest = "";
+		for(auto pair: product(range('a', 'd'), range(1,4))){
+			strTest += pair.first;					// works? maybe to_string(pair)?
+			strTest += to_string(pair.second);
+		}
+		testcase.CHECK_OUTPUT(strTest, "a,1a,2a,3b,1b,2b,3c,1c,2c,3");
+		strTest = "";
 
-		// for(auto pair: product(range('a', 'd'), range(1.1,4.1))){
-		// 	strTest += pair;
-		// }
-		// testcase.CHECK_OUTPUT(strTest, "a,1.1a,2.1a,3.1b,1.1b,2.1b,3.1c,1.1c,2.1c,3.1");
-		// strTest = "";
+		for(auto pair: product(range('a', 'd'), range(1.1,4.1))){
+			strTest += pair.first;					// works? maybe to_string(pair)?
+			strTest += to_string(pair.second);
+		}
+		testcase.CHECK_OUTPUT(strTest, "a,1.1a,2.1a,3.1b,1.1b,2.1b,3.1c,1.1c,2.1c,3.1");
+		strTest = "";
 
-		// for(auto pair: product(range(1, 4), range(1.1,4.1))){
-		// 	strTest += pair;
-		// }
-		// testcase.CHECK_OUTPUT(strTest, "1,1.11,2.11,3.12,1.12,2.12,3.13,1.13,2.13,3.1");
-		// strTest = "";
+		for(auto pair: product(range(1, 4), range(1.1,4.1))){
+			strTest += to_string(pair.first);					// works? maybe to_string(pair)?
+			strTest += to_string(pair.second);
+		}
+		testcase.CHECK_OUTPUT(strTest, "1,1.11,2.11,3.12,1.12,2.12,3.13,1.13,2.13,3.1");
+		strTest = "";
 
 		// for(auto pair: product(chain(string("ab"), range('c', 'e')), chain(string("12"), range('3', '5')))){
 		// 	strTest += pair;
@@ -191,7 +199,7 @@ int main(){
 		// }									// product of zips: a,c1,3 a,c2,4 b,d1,3 b,d2,4
 		// testcase.CHECK_OUTPUT(strTest, "a,c1,3a,c2,4b,d1,3b,d2,4");
 		// strTest = "";
-		// ;
+		;
 
 		// Checking Powersets
 		testcase.setname("Powerset Tests");
