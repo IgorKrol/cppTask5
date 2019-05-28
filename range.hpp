@@ -17,22 +17,22 @@ template <typename T>
 	public:
 	T itr;
 
-	iterator(T val) : it(val){}
+	iterator(T val) : itr(val){}
 
 	// operators
 	bool operator!=(iterator const &other) const{
-        return it != other.it;
+        return itr != other.itr;
 	}
 	bool operator== (range::iterator const &other) const{
-        return it == other.it;
+        return itr == other.itr;
 	}
 
 	T operator*() const{
-        return it;
+        return itr;
 	}
 
 	iterator &operator++(){
-        ++it;
+        ++itr;
         return *this;
 	}
 };
