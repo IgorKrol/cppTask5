@@ -1,53 +1,50 @@
 #pragma once
-#include "taskIterator.hpp"
+// #include "taskIterator.hpp"
+#include "iostream"
 
-namespace itertools
-{
-template<class T>
+
+namespace itertools {
+
+template <typename T>
 	class range{
-		T first, last;
+	private:
+
+	T start;
+	T end;
+
+	class iterator{
 
 	public:
-		class iterator{
-		private:
-			T* currVal, start, end;
-		public:
-			iterator(T* c, T* s, T* e) : currVal(c), start(s), end(e) {
+	T itr;
 
-		}
-			T& operator*() const{
-				assert(currVal == start && currVal < end);
-				return *currVal;
-			}
-			// PREFIX
-			iterator& operator++(){
-				currVal++;
-				return *this;
-		}
-			// POSTFIX
-			const iterator operator++(int v){
-				iterator temp(v);
-				temp++;
-				return value;
-		}
+	iterator(T val) : it(val){}
 
-			bool operator!=(const iterator& other) const{
-				assert(start == other.start);
-				assert(last == other.last);
-				return currVal != other.currVal;
-			}
+	// operators
+	bool operator!=(iterator const &other) const{
+        return it != other.it;
+	}
+	bool operator== (range::iterator const &other) const{
+        return it == other.it;
 	}
 
-
-	range(T _start, T _end) : _start(first), _end(last){
-		
+	T operator*() const{
+        return it;
 	}
 
-	const iterator begin() const{
-
+	iterator &operator++(){
+        ++it;
+        return *this;
 	}
+};
 
-	const iterator end() const{
-		
+	public:
+	range(T _start, T _end) : start(_start), end(_end) {}
+
+	iterator begin() const {
+        return iterator(start);
 	}
+	iterator end() const {
+        return iterator(end);
+	}
+};
 }
