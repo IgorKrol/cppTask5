@@ -9,8 +9,8 @@ template <typename T>
 	class range{
 	private:
 
-	T start;
-	T end;
+	T _start;
+	T _end;
 
 	class iterator{
 
@@ -23,7 +23,7 @@ template <typename T>
 	bool operator!=(iterator const &other) const{
         return itr != other.itr;
 	}
-	bool operator== (range::iterator const &other) const{
+	bool operator==(range::iterator const &other) const{
         return itr == other.itr;
 	}
 
@@ -38,13 +38,13 @@ template <typename T>
 };
 
 	public:
-	range(T _start, T _end) : start(_start), end(_end) {}
+	range(T s, T e) : _start(s), _end(e) {}
 
 	iterator begin() const {
-        return iterator(start);
+        return iterator(_start);
 	}
 	iterator end() const {
-        return iterator(end);
+        return iterator(_end);
 	}
 };
 }
