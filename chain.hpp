@@ -1,22 +1,25 @@
 #pragma once
 // #include "taskIterator.hpp"
+#include "iostream"
 #include "range.hpp"
 // #include "chain.hpp"
 // #include "product.hpp"
 // #include "zip.hpp"
 // #include "powerset.hpp"
 
-#include "iostream"
+
 
 namespace itertools {
 
 template <typename T1, typename T2>
 	class chain {
+
 	private:
 	T1 itr1;
 	T2 itr2;
 
 	public:
+	// CONSTRUCTOR
 	chain(T1 _start, T2 _end) :  itr1(_start), itr2(_end) {}
 
 	auto begin() const{
@@ -33,10 +36,11 @@ template <typename T1, typename T2>
 	private:
 	C1 it1;
 	C2 it2;
-	bool flag;
+	bool flag = true;
 
 	public:
-	iterator(C1 _it1, C2 _it2) : it1(_it1), it2(_it2), flag(true)  {}
+	//CONSTRUCTOR
+	iterator(C1 _it1, C2 _it2) : it1(_it1), it2(_it2) {}
 
 	// OPERATORS
 	iterator<C1,C2>& operator++() {
@@ -44,11 +48,6 @@ template <typename T1, typename T2>
         else ++it2;
 
         return *this;
-	}
-
-	decltype(*it1) operator*() const {
-        if(flag) return *it1;
-        else return *it2;
 	}
 
 	bool operator!=(iterator<C1,C2>  it){
@@ -60,6 +59,13 @@ template <typename T1, typename T2>
                 return it2 != it.it2;
         
 	}
+
+	decltype(*it1) operator*() const {
+        if(flag) return *it1;
+        else return *it2;
+	}
+
+
 };
 
 };

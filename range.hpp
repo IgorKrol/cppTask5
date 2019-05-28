@@ -17,27 +17,30 @@ template <typename T>
 	public:
 	T itr;
 
+	//CONSTRUCTOR
 	iterator(T val) : itr(val){}
 
-	// operators
-	bool operator!=(iterator const &other) const{
-        return itr != other.itr;
+	// OPERATORS
+	iterator &operator++(){
+        ++itr;
+        return *this;
 	}
+
 	bool operator==(range::iterator const &other) const{
         return itr == other.itr;
+	}
+
+	bool operator!=(iterator const &other) const{
+        return itr != other.itr;
 	}
 
 	T operator*() const{
         return itr;
 	}
-
-	iterator &operator++(){
-        ++itr;
-        return *this;
-	}
 };
 
 	public:
+	// CONSTRUCTOR
 	range(T s, T e) : _start(s), _end(e) {}
 
 	iterator begin() const {
