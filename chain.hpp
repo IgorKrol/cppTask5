@@ -1,13 +1,66 @@
 #pragma once
-#include "taskIterator.hpp"
+// #include "taskIterator.hpp"
 #include "range.hpp"
-#include "chain.hpp"
-#include "product.hpp"
-#include "zip.hpp"
-#include "powerset.hpp"
+// #include "chain.hpp"
+// #include "product.hpp"
+// #include "zip.hpp"
+// #include "powerset.hpp"
 
-namespace itertools
-{
-template <class T, class P>
-	DummyIterable chain(T, P){return DummyIterable{};}
+#include "iostream"
+
+namespace itertools {
+
+template <typename T1, typename T2>
+	class chain {
+	private:
+	T1 itr1;
+	T2 itr2;
+
+	public:
+	chain(T1 _start, T2 _end) :  itr1(_start), itr2(_end) {}
+
+	auto begin() const{
+        return iterator<decltype(itr1.begin()),decltype(itr2.begin())>(itr1.begin(), itr2.begin());
+	}
+
+	auto end() const{
+        return iterator<decltype(itr1.end()),decltype(itr2.end())>(itr1.end(), itr2.end());
+	}
+
+	template <typename C1, typename C2>
+	class iterator {
+
+	private:
+	C1 it1;
+	C2 it2;
+	bool flag;
+
+	public:
+	iterator(C1 _it1, C2 _it2) : it1(_it1), it2(_it2), flag(true)  {}
+
+	// OPERATORS
+	iterator<C1,C2>& operator++() {
+        if(flag) ++it1;
+        else ++it2;
+
+        return *this;
+	}
+
+	decltype(*it1) operator*() const {
+        if(flag) return *it1;
+        else return *it2;
+	}
+
+	bool operator!=(iterator<C1,C2>  it){
+        if(flag && !(it1 != it.it1))
+                flag = false;
+        if(flag)
+                return it1 != it.it1;
+        else
+                return it2 != it.it2;
+        
+	}
+};
+
+};
 }
