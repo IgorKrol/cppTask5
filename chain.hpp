@@ -11,6 +11,7 @@
 
 namespace itertools {
 
+	/* This class represent Chain of 2 series, T1xT2 */
 template <typename T1, typename T2>
 	class chain {
 
@@ -21,7 +22,8 @@ template <typename T1, typename T2>
 	public:
 	// CONSTRUCTOR
 	chain(T1 _start, T2 _end) :  itr1(_start), itr2(_end) {}
-
+	
+	/* This Class represent return value of Chain as iterator */
 	template <typename C1, typename C2>
 	class iterator {
 
