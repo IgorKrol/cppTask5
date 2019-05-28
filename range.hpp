@@ -6,18 +6,20 @@
 namespace itertools {
 
 template <typename T>
+	/*This class represent series from T _start...T _end
+	for exemple 1...4 will iterate like this: 1,2,3,4 */
 	class range{
 	private:
 
 	T _start;
 	T _end;
-
+	/* This class represent return value of range as iterator */
 	class iterator{
 
 	public:
 	T itr;
 
-	//CONSTRUCTOR
+	// CONSTRUCTOR
 	iterator(T val) : itr(val){}
 
 	// OPERATORS
@@ -38,7 +40,7 @@ template <typename T>
         return itr;
 	}
 };
-
+	
 	public:
 	// CONSTRUCTOR
 	range(T s, T e) : _start(s), _end(e) {}
